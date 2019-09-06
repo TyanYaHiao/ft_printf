@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	pre_parce_for_i(va_list vl, t_buf **buf, t_flags fl)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 char	*make_ox_for_make_ox(char *ox, int n)
 {

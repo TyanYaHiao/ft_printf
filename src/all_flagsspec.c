@@ -6,11 +6,11 @@
 /*   By: fsmith <fsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 20:17:56 by fsmith            #+#    #+#             */
-/*   Updated: 2019/09/06 20:17:56 by fsmith           ###   ########.fr       */
+/*   Updated: 2019/09/06 20:19:58 by fsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	s_flag(char *str, t_buf **buf, t_flags fl)
 {

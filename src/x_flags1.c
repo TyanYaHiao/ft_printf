@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 void	x_flag1(t_buf **buf, t_flags fl, char *(*f)(unsigned int, int), \
 unsigned int k)

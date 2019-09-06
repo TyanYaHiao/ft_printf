@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
 char	*make_str_with_precision_for_hhi(t_flags fl, int8_t k)
 {

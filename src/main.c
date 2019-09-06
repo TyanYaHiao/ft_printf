@@ -6,11 +6,11 @@
 /*   By: fsmith <fsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 20:18:39 by fsmith            #+#    #+#             */
-/*   Updated: 2019/09/06 20:18:39 by fsmith           ###   ########.fr       */
+/*   Updated: 2019/09/06 22:00:55 by fsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 #include <float.h>
 
 void	make_t_flags0(t_flags *fl)
