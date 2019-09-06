@@ -6,13 +6,13 @@
 /*   By: kmills <kmills@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 10:18:18 by kmills            #+#    #+#             */
-/*   Updated: 2019/08/24 21:00:03 by kmills           ###   ########.fr       */
+/*   Updated: 2019/09/06 22:11:21 by fsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "../libft/libft.h"
+# include "includes/libft.h"
 
 typedef struct		s_double
 {
@@ -59,6 +59,10 @@ typedef struct		s_tofree
 }					t_tofree;
 
 int		ft_printf(const char *restrict format, ...);
+
+void	pf_flags_init(t_flags *fl);
+
+
 t_buf	*create_buf();
 void	put_char_to_buf(t_buf **buf, char c);
 void	print_buf(t_buf *buf);
@@ -125,7 +129,6 @@ void	o_flag(va_list vl, t_buf **buf, t_flags fl);
 void	x_flag(va_list vl, t_buf **buf, t_flags fl, \
 		char *(*f)(unsigned int, int));
 void	u_flag(va_list vl, t_buf **buf, t_flags fl);
-void	make_t_flags0(t_flags *fl);
 void	make_t_width(t_flags *fl, const char *restrict *format);
 void	make_t_precision(t_flags *fl, const char *restrict *format);
 void	percentage(t_buf **buf, t_flags fl);

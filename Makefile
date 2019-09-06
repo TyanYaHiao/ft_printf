@@ -6,7 +6,7 @@
 #    By: fsmith <fsmith@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 19:40:29 by fsmith            #+#    #+#              #
-#    Updated: 2019/09/06 21:52:02 by fsmith           ###   ########.fr        #
+#    Updated: 2019/09/06 22:06:42 by fsmith           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ IFLAGS :=		-I $(INC_PATH) -I $(LIB_PATH)
 LFLAGS :=		-lft -L $(LIB_PATH)
 
 HFILES :=		ft_printf
-FILES :=		main all_flagsspec buffer buffer2 double free_dd i_flags\
+
+FILES :=		pf_printf all_flagsspec buffer buffer2 double free_dd i_flags\
 				i_flags1 i_flags2 l_ll_h_hh_for_i l_ll_h_hh_for_o\
 				l_ll_h_hh_for_u l_ll_h_hh_for_x long_double make_ox_for_any\
 				make_str_with_precision_for_any none_infinity o_flags\
