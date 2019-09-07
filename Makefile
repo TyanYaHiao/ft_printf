@@ -6,7 +6,7 @@
 #    By: fsmith <fsmith@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 19:40:29 by fsmith            #+#    #+#              #
-#    Updated: 2019/09/06 22:06:42 by fsmith           ###   ########.fr        #
+#    Updated: 2019/09/07 12:40:29 by fsmith           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_PATH :=		.obj/
 
 CC :=			clang
 CFLAGS :=		-g -Wall -Wextra -Werror
-IFLAGS :=		-I $(INC_PATH) -I $(LIB_PATH)
+IFLAGS :=		-I $(INC_PATH) -I $(LIB_PATH)$(INC_PATH)
 LFLAGS :=		-lft -L $(LIB_PATH)
 
 HFILES :=		ft_printf

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include <libft.h>
 
 double		ft_abs_double(double number)
 {

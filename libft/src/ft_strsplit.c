@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include <libft.h>
 
 static char		**ft_strsplit_check(char const *s, char c)
 {

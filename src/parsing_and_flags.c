@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include <ft_printf.h>
 
 void	make_t_width(t_flags *fl, const char *restrict *format)
 {

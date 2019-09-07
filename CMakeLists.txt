@@ -1,13 +1,14 @@
 cmake_minimum_required(VERSION 3.13)
-project(ft_printf)
+project(ft_printf C)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 11)
 
 include_directories(includes)
-include_directories(libft)
+include_directories(libft/includes)
 
 add_executable(ft_printf
 		includes/ft_printf.h
+		libft/includes/libft.h
 		libft/src/ft_abs.c
 		libft/src/ft_abs_double.c
 		libft/src/ft_atoi.c
@@ -109,7 +110,6 @@ add_executable(ft_printf
 		libft/src/ft_utoa_l.c
 		libft/src/ft_utoa_ll.c
 		libft/src/get_next_line.c
-		libft/includes/libft.h
 		src/all_flagsspec.c
 		src/buffer.c
 		src/buffer2.c
@@ -123,13 +123,13 @@ add_executable(ft_printf
 		src/l_ll_h_hh_for_u.c
 		src/l_ll_h_hh_for_x.c
 		src/long_double.c
-		src/pf_printf.c
 		src/make_ox_for_any.c
 		src/make_str_with_precision_for_any.c
 		src/none_infinity.c
 		src/o_flags.c
 		src/o_flags1.c
 		src/parsing_and_flags.c
+		src/pf_printf.c
 		src/preparce_for_flags.c
 		src/print_float.c
 		src/str_calc.c

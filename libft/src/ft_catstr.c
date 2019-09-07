@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include <libft.h>
 
 char	*ft_catstr(const char *s1, char *s2)
 {

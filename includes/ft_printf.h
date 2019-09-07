@@ -6,13 +6,14 @@
 /*   By: kmills <kmills@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 10:18:18 by kmills            #+#    #+#             */
-/*   Updated: 2019/09/06 22:11:21 by fsmith           ###   ########.fr       */
+/*   Updated: 2019/09/07 12:36:45 by fsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-# include "includes/libft.h"
+
+# include <libft.h>
 
 typedef struct		s_double
 {

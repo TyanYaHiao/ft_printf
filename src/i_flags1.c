@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include <ft_printf.h>
 
 void	i_flag1_hh(t_buf **buf, t_flags fl, char *str, int8_t k)
 {

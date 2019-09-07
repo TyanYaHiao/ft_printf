@@ -124,7 +124,6 @@ int				ft_atoi_hex(char *str);
 int				ft_atoi_base(const char *str, int str_base);
 double			ft_round_double(double x);
 double			ft_abs_double(double number);
-void			ft_switch_bool(int *value);
 char			*ft_dtoa(double n, size_t precision);
 double			ft_diff_double(double x0, double x1);
 int				ft_is_sort(int *tab, int length, int (*f)(int, int));
