@@ -6,7 +6,7 @@
 /*   By: fsmith <fsmith@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 22:08:55 by fsmith            #+#    #+#             */
-/*   Updated: 2019/09/06 22:09:10 by fsmith           ###   ########.fr       */
+/*   Updated: 2019/09/07 13:10:13 by fsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,24 +53,6 @@ void	ft_printf2(va_list vl, t_buf **buf, const char *restrict format)
 	}
 }
 
-int		ft_printf(const char *restrict format, ...)
-{
-	va_list	vl;
-	t_buf	*buf;
-	t_buf	*buf_start;
-	int		n;
-
-	buf = create_buf();
-	buf_start = buf;
-	va_start(vl, format);
-	ft_printf2(vl, &buf, format);
-	print_buf(buf_start);
-	va_end(vl);
-	n = returned_printf(buf_start);
-	free_all_buff(buf_start);
-	return (n);
-}
-
 void	turbo_parser2(va_list vl, t_buf **buf, const char *restrict *format, \
 t_flags fl)
 {
@@ -111,9 +93,20 @@ void	turbo_parser(va_list vl, t_buf **buf, const char *restrict *format)
 		(*format)++;
 }
 
-int main()
+int		ft_printf(const char *restrict format, ...)
 {
-	ft_printf("%.3Lf\n", LDBL_MIN);
-	printf("%.3Lf\n", LDBL_MIN);
-	return (0);
+	va_list	vl;
+	t_buf	*buf;
+	t_buf	*buf_start;
+	int		n;
+
+	buf = create_buf();
+	buf_start = buf;
+	va_start(vl, format);
+	ft_printf2(vl, &buf, format);
+	print_buf(buf_start);
+	va_end(vl);
+	n = returned_printf(buf_start);
+	free_all_buff(buf_start);
+	return (n);
 }

@@ -6,7 +6,7 @@
 /*   By: kmills <kmills@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 10:18:18 by kmills            #+#    #+#             */
-/*   Updated: 2019/09/07 12:36:45 by fsmith           ###   ########.fr       */
+/*   Updated: 2019/09/07 12:53:46 by fsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,7 @@ typedef struct		s_tofree
 }					t_tofree;
 
 int		ft_printf(const char *restrict format, ...);
-
 void	pf_flags_init(t_flags *fl);
-
-
 t_buf	*create_buf();
 void	put_char_to_buf(t_buf **buf, char c);
 void	print_buf(t_buf *buf);

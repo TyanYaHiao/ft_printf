@@ -6,7 +6,7 @@
 #    By: fsmith <fsmith@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/06 19:40:29 by fsmith            #+#    #+#              #
-#    Updated: 2019/09/07 12:40:29 by fsmith           ###   ########.fr        #
+#    Updated: 2019/09/07 13:36:06 by fsmith           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,9 @@ OBJS :=			$(addprefix $(OBJ_PATH), $(SRCS:%.c=%.o))
 all: $(NAME)
 
 $(NAME): $(LIB) $(OBJ_PATH) $(OBJS)
-		@ $(CC) $(CFLAGS) $(IFLAGS) $(LFLAGS) $(OBJS) -o $(NAME)
+	@cp $(LIB) ./$(NAME)
+	@ar rc libftprintf.a $(OBJS)
+	@ranlib libftprintf.a
 
 $(LIB):
 	@ $(MAKE) -C $(dir $@) $(notdir $@)
