@@ -38,35 +38,43 @@ HDRS :=			$(addprefix $(INC_PATH), $(addsuffix .h, $(HFILES)))
 SRCS :=			$(addprefix $(SRC_PATH), $(addsuffix .c, $(FILES)))
 OBJS :=			$(addprefix $(OBJ_PATH), $(SRCS:%.c=%.o))
 
+GREEN = \033[0;32m
+RED = \033[0;31m
+RESET = \033[0m
+
 all: $(NAME)
 
 $(NAME): $(LIB) $(OBJ_PATH) $(OBJS)
 	@cp $(LIB) ./$(NAME)
 	@ar rc libftprintf.a $(OBJS)
 	@ranlib libftprintf.a
+	@echo "\n$(GREEN)libftprintf.a created$(RESET)"
 
 $(LIB):
 	@ $(MAKE) -C $(dir $@) $(notdir $@)
 
 $(OBJ_PATH):
-	mkdir -p $(OBJ_PATH)$(SRC_PATH)
+	@mkdir -p $(OBJ_PATH)$(SRC_PATH)
 $(OBJ_PATH)%.o: %.c $(HDRS)
-	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+	@echo -n '.'
 
 clean: mclean
-	make clean -C $(LIB_PATH)
+	@make clean -C $(LIB_PATH)
 
 fclean: mfclean
-	make fclean -C $(LIB_PATH)
+	@make fclean -C $(LIB_PATH)
 
 re: fclean all
 
 mclean:
-	rm -f $(OBJS) $(DEPS)
+	@rm -f $(OBJS) $(DEPS)
+	@echo "$(RED)libftpritnf objs deleted$(RESET)"
 
-mfclean:
-	rm -f $(NAME)
-	rm -rf $(OBJ_PATH)
+mfclean: mclean
+	@rm -f $(NAME)
+	@rm -rf $(OBJ_PATH)
+	@echo "$(RED)libftpritnf.a deleted$(RESET)"
 
 mre: mfclean all
 

@@ -48,24 +48,31 @@ HDRS =		$(addprefix $(INC_PATH), $(addsuffix .h, $(HFILES)))
 SRCS =		$(addprefix $(SRC_PATH), $(addsuffix .c, $(FILES)))
 OBJS =		$(addprefix $(OBJ_PATH), $(addsuffix .o, $(FILES)))
 
+GREEN = \033[0;32m
+RED = \033[0;31m
+RESET = \033[0m
+
 all: $(NAME)
 
 $(NAME): $(OBJ_PATH) $(OBJS)
 	@ar rc libft.a $(OBJS)
 	@ranlib libft.a
+	@echo "\n$(GREEN)libft.a created$(RESET)"
 
 $(OBJ_PATH):
 	@mkdir -p $(OBJ_PATH)
-	@echo $(NAME): $(OBJ_PATH) was created
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c $(HDRS)
 	@$(CC) $(CFLAGS) -c $(IFLAGS) $< -o $@
+	@echo -n '.'
 
 clean:
 	@rm -rf $(OBJS)
-	rm -rf $(OBJ_PATH)
+	@rm -rf $(OBJ_PATH)
+	@echo "$(RED)libft objs deleted$(RESET)"
 
 fclean: clean
 	@rm -rf libft.a
+	@echo "$(RED)libft.a deleted$(RESET)"
 
 re: fclean all
