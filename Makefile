@@ -45,13 +45,12 @@ RESET = \033[0m
 all: $(NAME)
 
 $(NAME): $(LIB) $(OBJ_PATH) $(OBJS)
-	@cp $(LIB) ./$(NAME)
 	@ar rc libftprintf.a $(OBJS)
 	@ranlib libftprintf.a
 	@echo "\n$(GREEN)libftprintf.a created$(RESET)"
 
 $(LIB):
-	@ $(MAKE) -C $(dir $@) $(notdir $@)
+	@ $(MAKE) -sC $(LIB_PATH)
 
 $(OBJ_PATH):
 	@mkdir -p $(OBJ_PATH)$(SRC_PATH)
@@ -82,5 +81,3 @@ git:
 	git add .
 	git commit -am "$(G)"
 	git push
-
-.PHONY: $(LIB) all clean fclean re mclean mfclean mre
