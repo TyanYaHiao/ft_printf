@@ -45,6 +45,7 @@ RESET = \033[0m
 all: $(NAME)
 
 $(NAME): $(LIB) $(OBJ_PATH) $(OBJS)
+	@cp $(LIB) ./$(NAME)
 	@ar rc libftprintf.a $(OBJS)
 	@ranlib libftprintf.a
 	@echo "\n$(GREEN)libftprintf.a created$(RESET)"

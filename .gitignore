@@ -3,5 +3,6 @@
 *.a
 *.o
 .idea
+test
 .DS_Store
 cmake-build-debug/
