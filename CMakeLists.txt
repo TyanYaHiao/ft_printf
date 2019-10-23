@@ -136,4 +136,4 @@ add_executable(ft_printf
 		src/str_calc_extra.c
 		src/u_flags.c
 		src/x_flags.c
-		src/x_flags1.c)
+		src/x_flags1.c main.c)
