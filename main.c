@@ -7,6 +7,6 @@ int main()
 	ft_printf("%.3Lf\n", LDBL_MIN);
 	printf("%.3Lf\n", LDBL_MIN);
 	ft_printf(CYAN"%s\n"RESET, str);
-	ft_printf("{red}%s{eoc}hi\n"RESET, str);
+	ft_printf("{yellow}%s{eoc} hi\n"RESET, str);
 	return (0);
 }

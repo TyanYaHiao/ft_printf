@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_colors.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmills <kmills@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/05 10:18:18 by kmills            #+#    #+#             */
-/*   Updated: 2019/09/07 12:53:46 by fsmith           ###   ########.fr       */
+/*   Created: 2019/10/20 10:18:18 by kmills            #+#    #+#             */
+/*   Updated: 2019/10/20 12:53:46 by fsmith           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	color(t_buf **buf, const char *restrict *format)
 {
 	int	len;
 
+	len = 1;
 	if (!ft_strncmp(*format, "{red}", (len = 5)))
 		put_str_to_buf(buf, RED);
 	else if (!ft_strncmp(*format, "{green}", (len = 7)))
@@ -32,7 +33,9 @@ void	color(t_buf **buf, const char *restrict *format)
 		put_str_to_buf(buf, PURPLE);
 	else if (!ft_strncmp(*format, "{cyan}", (len = 6)))
 		put_str_to_buf(buf, CYAN);
+	else if (!ft_strncmp(*format, "{bold}", (len = 6)))
+		put_str_to_buf(buf, BOLD);
 	else if (!ft_strncmp(*format, "{eoc}", (len = 5)))
 		put_str_to_buf(buf, RESET);
-	*format += len;
+	*format += (len - 1);
 }

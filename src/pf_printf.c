@@ -38,7 +38,7 @@ void	ft_printf2(va_list vl, t_buf **buf, const char *restrict format)
 		}
 		else if (*format == '%' && !format[1])
 		{
-			break ;
+			break;
 		}
 		else if (*format == '%' && format[1] != '%')
 		{
@@ -46,7 +46,10 @@ void	ft_printf2(va_list vl, t_buf **buf, const char *restrict format)
 			turbo_parser(vl, buf, &format);
 		}
 		else if (*format == '{')
+		{
 			color(buf, &format);
+			format++;
+		}
 		else
 		{
 			put_char_to_buf(buf, *format);
