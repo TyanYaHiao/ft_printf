@@ -37,5 +37,10 @@ void	color(t_buf **buf, const char *restrict *format)
 		put_str_to_buf(buf, BOLD);
 	else if (!ft_strncmp(*format, "{eoc}", (len = 5)))
 		put_str_to_buf(buf, RESET);
+	else
+	{
+		put_char_to_buf(buf, '{');
+		return ;
+	}
 	*format += (len - 1);
 }
