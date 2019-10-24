@@ -8,5 +8,7 @@ int main()
 	printf("%.3Lf\n", LDBL_MIN);
 	ft_printf(CYAN"%s\n"RESET, str);
 	ft_printf("{yellow}%s{eoc} hi\n"RESET, str);
+	printf("{%10d}\n", 42);
+	ft_printf("{%10d}\n", 42);
 	return (0);
 }
