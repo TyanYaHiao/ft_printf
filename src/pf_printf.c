@@ -45,6 +45,8 @@ void	ft_printf2(va_list vl, t_buf **buf, const char *restrict format)
 			format++;
 			turbo_parser(vl, buf, &format);
 		}
+		else if (*format == '{')
+			color(buf, &format);
 		else
 		{
 			put_char_to_buf(buf, *format);

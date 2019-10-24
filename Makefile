@@ -30,7 +30,7 @@ FILES :=		pf_printf all_flagsspec buffer buffer2 double free_dd i_flags\
 				l_ll_h_hh_for_u l_ll_h_hh_for_x long_double make_ox_for_any\
 				make_str_with_precision_for_any none_infinity o_flags\
 				o_flags1 parsing_and_flags preparce_for_flags print_float\
-				str_calc_extra str_calc u_flags x_flags x_flags1
+				str_calc_extra str_calc u_flags x_flags x_flags1 colors
 
 LIB :=			$(LIB_PATH)libft.a
 
