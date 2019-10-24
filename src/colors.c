@@ -16,7 +16,6 @@ void	color(t_buf **buf, const char *restrict *format)
 {
 	int	len;
 
-	len = 1;
 	if (!ft_strncmp(*format, "{red}", (len = 5)))
 		put_str_to_buf(buf, RED);
 	else if (!ft_strncmp(*format, "{green}", (len = 7)))
@@ -37,10 +36,7 @@ void	color(t_buf **buf, const char *restrict *format)
 		put_str_to_buf(buf, BOLD);
 	else if (!ft_strncmp(*format, "{eoc}", (len = 5)))
 		put_str_to_buf(buf, RESET);
-	else
-	{
+	else if ((len = 1))
 		put_char_to_buf(buf, '{');
-		return ;
-	}
 	*format += (len - 1);
 }

@@ -37,9 +37,7 @@ void	ft_printf2(va_list vl, t_buf **buf, const char *restrict format)
 			format += 2;
 		}
 		else if (*format == '%' && !format[1])
-		{
-			break;
-		}
+			break ;
 		else if (*format == '%' && format[1] != '%')
 		{
 			format++;
