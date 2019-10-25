@@ -17,7 +17,12 @@ void	make_t_width(va_list vl, t_flags *fl, const char *restrict *format)
 	if (**format == '*')
 	{
 		fl->width = (int)va_arg(vl, int);
-		(*format)++;
+		if (fl->width < 0)
+		{
+			fl->width *= -1;
+			fl->minus = 1;
+		}
+		return ;
 	}
 	else
 		fl->width = ft_atoi(*format);
