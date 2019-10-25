@@ -138,10 +138,10 @@ void				o_flag(va_list vl, t_buf **buf, t_flags fl);
 void				x_flag(va_list vl, t_buf **buf, t_flags fl, \
 					char *(*f)(unsigned int, int));
 void				u_flag(va_list vl, t_buf **buf, t_flags fl);
-void				make_t_width(t_flags *fl, const char *restrict *format);
-void				make_t_precision(t_flags *fl, const char *restrict *format);
+void				make_t_width(va_list vl, t_flags *fl, const char *restrict *format);
+void				make_t_precision(va_list vl, t_flags *fl, const char *restrict *format);
 void				percentage(t_buf **buf, t_flags fl);
-void				preparcing(t_buf **buf, t_flags *fl,
+void				preparcing(va_list vl, t_buf **buf, t_flags *fl,
 					const char *restrict *format);
 void				pre_parce_for_i(va_list vl, t_buf **buf, t_flags fl);
 void				pre_parce_for_u(va_list vl, t_buf **buf, t_flags fl);

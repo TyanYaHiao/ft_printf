@@ -90,7 +90,7 @@ void	turbo_parser(va_list vl, t_buf **buf, const char *restrict *format)
 	t_flags	fl;
 
 	pf_flags_init(&fl);
-	preparcing(buf, &fl, format);
+	preparcing(vl, buf, &fl, format);
 	turbo_parser2(vl, buf, format, fl);
 	if (*format[0])
 		(*format)++;

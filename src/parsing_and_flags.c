@@ -12,18 +12,30 @@
 
 #include "ft_printf.h"
 
-void	make_t_width(t_flags *fl, const char *restrict *format)
+void	make_t_width(va_list vl, t_flags *fl, const char *restrict *format)
 {
-	fl->width = ft_atoi(*format);
+	if (**format == '*')
+	{
+		fl->width = (int)va_arg(vl, int);
+		(*format)++;
+	}
+	else
+		fl->width = ft_atoi(*format);
 	while ((**format) >= '0' && (**format) <= '9')
 		(*format)++;
 	(*format)--;
 }
 
-void	make_t_precision(t_flags *fl, const char *restrict *format)
+void	make_t_precision(va_list vl, t_flags *fl, const char *restrict *format)
 {
 	(*format)++;
-	fl->precision = ft_atoi(*format);
+	if (**format == '*')
+	{
+		fl->precision = (int)va_arg(vl, int);
+		(*format)++;
+	}
+	else
+		fl->precision = ft_atoi(*format);
 	if (fl->precision == -1)
 		fl->precision = 0;
 	while ((**format) >= '0' && (**format) <= '9')
@@ -31,7 +43,7 @@ void	make_t_precision(t_flags *fl, const char *restrict *format)
 	(*format)--;
 }
 
-void	preparcing3(t_flags *fl, const char *restrict *format)
+void	preparcing3(va_list vl, t_flags *fl, const char *restrict *format)
 {
 	if ((**format) == ' ' && !fl->plus)
 		fl->space = 1;
@@ -49,19 +61,19 @@ void	preparcing3(t_flags *fl, const char *restrict *format)
 	}
 	if ((**format) == '0' && !fl->minus)
 		fl->zero = 1;
-	if ((**format) > '0' && (**format) <= '9')
-		make_t_width(fl, format);
+	if (((**format) > '0' && (**format) <= '9') || (**format) == '*')
+		make_t_width(vl, fl, format);
 	if ((**format) == '.')
-		make_t_precision(fl, format);
+		make_t_precision(vl, fl, format);
 	if ((**format) == 'l' && fl->l < 2)
 		fl->l++;
 	if ((**format) == 'j' && fl->l < 1)
 		fl->l++;
 }
 
-void	preparcing2(t_flags *fl, const char *restrict *format)
+void	preparcing2(va_list vl, t_flags *fl, const char *restrict *format)
 {
-	preparcing3(fl, format);
+	preparcing3(vl, fl, format);
 	if ((**format) == 'h' && !fl->l && fl->h < 2)
 		fl->h++;
 	if ((**format) == 'L' && !fl->l && fl->h < 2)
@@ -69,14 +81,14 @@ void	preparcing2(t_flags *fl, const char *restrict *format)
 	(*format)++;
 }
 
-void	preparcing(t_buf **buf, t_flags *fl, const char *restrict *format)
+void	preparcing(va_list vl, t_buf **buf, t_flags *fl, const char *restrict *format)
 {
 	while ((**format) == ' ' || (**format) == '-' || (**format) == '+' || \
 	((**format) >= '0' && (**format) <= '9') || (**format) == '#' || \
 	(**format) == '.' || (**format) == 'h' || (**format) == 'l' || \
-	(**format) == 'L')
+	(**format) == 'L' || (**format) == '*')
 	{
-		preparcing2(fl, format);
+		preparcing2(vl, fl, format);
 	}
 	if ((**format) == '%')
 		percentage(buf, *fl);
